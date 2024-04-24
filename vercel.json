@@ -1,6 +1,21 @@
 {
-    "builds": [{ "src": "index.js", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
-    "functions": { "index.js": { "maxDuration": 15 } }
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@vercel/node",
+            "config": {
+                "functions": {
+                    "index.js": {
+                        "maxDuration": 15
+                    }
+                }
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.js"
+        }
+    ]
 }
-
